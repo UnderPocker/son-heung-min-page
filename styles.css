@@ -97,3 +97,43 @@ button:hover {
         padding: 30px;
     }
 }
+
+/* Остальные стили остаются без изменений */
+
+.achievements-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.achievements-list figure {
+    text-align: center;
+    margin: 0;
+    width: 150px;
+}
+
+.achievements-list img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.achievements-list figcaption {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Адаптивность для списка достижений */
+@media (max-width: 768px) {
+    .achievements-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .achievements-list figure {
+        width: 100%;
+    }
+}
