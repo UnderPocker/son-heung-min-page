@@ -180,3 +180,26 @@ body.dark-theme section {
 body.dark-theme footer {
     background-color: #1f1f1f;
 }
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Элементы хэдера располагаются вертикально */
+        align-items: flex-start; /* Выравниваем элементы по левому краю */
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 20px; /* Уменьшаем размер заголовка */
+        margin-bottom: 10px; /* Добавляем отступ снизу */
+    }
+
+    nav ul {
+        flex-direction: column; /* Навигация становится вертикальной */
+        gap: 10px;
+    }
+
+    .theme-switch-wrapper {
+        margin-top: 10px; /* Добавляем отступ сверху для переключателя темы */
+    }
+}
