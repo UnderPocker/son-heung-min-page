@@ -16,7 +16,6 @@ header {
     justify-content: space-between;
     align-items: center;
     transition: background-color 0.3s, color 0.3s;
-    position: relative; /* Для позиционирования switch */
 }
 
 header h1 {
@@ -26,16 +25,20 @@ header h1 {
 nav ul {
     list-style: none;
     padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+    display: flex;
+    gap: 20px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 20px; /* Увеличиваем размер текста */
+    transition: color 0.3s; /* Плавное изменение цвета при наведении */
+}
+
+nav ul li a:hover {
+    color: #2196F3;
+    transition: color 0.3s;
 }
 
 main {
@@ -119,41 +122,42 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
 
-/* Стили для списка достижений */
-.achievements-list {
+/* Стили для списка наград */
+.awards-list {
+    list-style: none;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
 
-.achievements-list figure {
+.awards-list li {
     text-align: center;
-    margin: 0;
     width: 150px;
 }
 
-.achievements-list img {
+.awards-list img {
     width: 100px;
     height: auto;
     display: block;
     margin: 0 auto;
 }
 
-.achievements-list figcaption {
+.awards-list p {
     margin-top: 10px;
     font-size: 14px;
     color: #555;
 }
 
-/* Адаптивность для списка достижений */
+/* Адаптивность для списка наград */
 @media (max-width: 768px) {
-    .achievements-list {
+    .awards-list {
         flex-direction: column;
         align-items: center;
     }
 
-    .achievements-list figure {
+    .awards-list li {
         width: 100%;
     }
 }
