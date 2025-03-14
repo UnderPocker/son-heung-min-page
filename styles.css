@@ -16,6 +16,7 @@ header {
     justify-content: space-between;
     align-items: center;
     transition: background-color 0.3s, color 0.3s;
+    position: relative; /* Для позиционирования switch */
 }
 
 header h1 {
@@ -59,6 +60,9 @@ footer {
 
 /* Стили для переключателя темы */
 .theme-switch-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 20px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -107,6 +111,13 @@ input:checked + .slider {
 
 input:checked + .slider:before {
     transform: translateX(26px);
+}
+
+/* Стили для изображений наград */
+.achievements-list img {
+    max-width: 150px; /* Ограничиваем ширину изображений */
+    height: auto;
+    margin: 0 auto;
 }
 
 /* Темная тема */
