@@ -1,16 +1,21 @@
+/* Основные стили */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 header {
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
-    text-align: center;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 header h1 {
@@ -20,11 +25,8 @@ header h1 {
 nav ul {
     list-style: none;
     padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+    display: flex;
+    gap: 20px;
 }
 
 nav ul li a {
@@ -37,6 +39,7 @@ section {
     margin: 20px;
     background-color: #fff;
     border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 img {
@@ -51,89 +54,76 @@ footer {
     padding: 10px;
     background-color: #333;
     color: #fff;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #555;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #777;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 24px;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    section {
-        margin: 10px;
-        padding: 15px;
-    }
-}
-
-@media (min-width: 1024px) {
-    body {
-        font-size: 18px;
-    }
-
-    header h1 {
-        font-size: 36px;
-    }
-
-    section {
-        margin: 40px;
-        padding: 30px;
-    }
-}
-
-/* Остальные стили остаются без изменений */
-
-.achievements-list {
+/* Стили для переключателя темы */
+.theme-switch-wrapper {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
-.achievements-list figure {
-    text-align: center;
-    margin: 0;
-    width: 150px;
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
 }
 
-.achievements-list img {
-    width: 100px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
-.achievements-list figcaption {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #555;
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
 }
 
-/* Адаптивность для списка достижений */
-@media (max-width: 768px) {
-    .achievements-list {
-        flex-direction: column;
-        align-items: center;
-    }
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
 
-    .achievements-list figure {
-        width: 100%;
-    }
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Темная тема */
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-theme header {
+    background-color: #1f1f1f;
+}
+
+body.dark-theme section {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+body.dark-theme footer {
+    background-color: #1f1f1f;
 }

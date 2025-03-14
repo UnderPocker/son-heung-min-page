@@ -1,5 +1,19 @@
-document.getElementById('colorChangeButton').addEventListener('click', function() {
-    const colors = ['#f4f4f4', '#e0e0e0', '#d0d0d0', '#c0c0c0'];
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    document.body.style.backgroundColor = randomColor;
+const themeSwitch = document.getElementById('theme-checkbox');
+const body = document.body;
+
+// Проверяем сохраненную тему в localStorage
+if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-theme');
+    themeSwitch.checked = true;
+}
+
+// Обработчик для переключателя
+themeSwitch.addEventListener('change', function () {
+    if (this.checked) {
+        body.classList.add('dark-theme');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        body.classList.remove('dark-theme');
+        localStorage.setItem('theme', 'light');
+    }
 });
